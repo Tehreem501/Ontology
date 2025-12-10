@@ -1,0 +1,3443 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#"
+     xml:base="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign"
+     xmlns:ux="https://uxiverse.com/ontology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:ncit="http://purl.obolibrary.org/obo/NCIT_"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:schema="http://schema.org/"
+     xmlns:snomed="http://purl.bioontology.org/ontology/SNOMEDCT/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/height -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/height"/>
+    
+
+
+    <!-- http://schema.org/name -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/name"/>
+    
+
+
+    <!-- http://schema.org/width -->
+
+    <owl:AnnotationProperty rdf:about="http://schema.org/width"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/color -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/color">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#InteractionState"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="https://purl.dsmz.de/schema/Color"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/isPartOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#contains"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UISystem"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/parentOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/parentOrganization">
+        <owl:inverseOf rdf:resource="http://schema.org/subOrganization"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/subOrganization -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/subOrganization">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#addressedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#addressedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#basedOnIssue"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:comment>Issue addressed by recommendation</rdfs:comment>
+        <rdfs:label>addressed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#affectsComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#affectsComponent">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Issue impacts specific component</rdfs:comment>
+        <rdfs:label>affects component</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#appliedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#appliedTo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasDesignPrinciple"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Design principle is applied to component</rdfs:comment>
+        <rdfs:label>applied to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#basedOnIssue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#basedOnIssue">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:comment>Recommendation is based on identified issue</rdfs:comment>
+        <rdfs:label>based on issue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#basedOnIssueCount -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#basedOnIssueCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:comment>Score computed from identified issues</rdfs:comment>
+        <rdfs:label>based on issue count</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#causedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#causedBy">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Issue caused by design principle, component, or layout choice</rdfs:comment>
+        <rdfs:label>caused by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#checksAgainstKnowledgeGraph -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#checksAgainstKnowledgeGraph">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FactValidation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Fact validation checks recommendation against ontology entities</rdfs:comment>
+        <rdfs:label>checks against knowledge graph</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#confirmsPresenceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#confirmsPresenceOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Component detection verifies component exists (not hallucinated)</rdfs:comment>
+        <rdfs:label>confirms presence of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#conformsToStandard -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#conformsToStandard">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BestPractice"/>
+        <rdfs:comment>Component follows best practice or design standard</rdfs:comment>
+        <rdfs:label>conforms to standard</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#contains -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#contains">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UISystem"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Parent UIComponent contains child UIComponent</rdfs:comment>
+        <rdfs:label>contains</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#contradicts -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#contradicts">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:comment>Recommendation contradicts another recommendation</rdfs:comment>
+        <rdfs:label>contradicts</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#detectsComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#detectsComponent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Component detection identifies specific UI component type</rdfs:comment>
+        <rdfs:label>detects component</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractedFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractedFrom">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#producesExtractionResult"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:comment>Extraction result comes from UI screen or image</rdfs:comment>
+        <rdfs:label>extracted from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractedTextFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractedTextFrom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TextExtraction"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Text extraction comes from specific component</rdfs:comment>
+        <rdfs:label>extracted text from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#facilitates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#facilitates">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:comment>Component or design principle enables user task completion</rdfs:comment>
+        <rdfs:label>facilitates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#functionallyRelatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#functionallyRelatedTo">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Component is functionally connected to another</rdfs:comment>
+        <rdfs:label>functionally related to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasBorder -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasBorder">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Border"/>
+        <rdfs:comment>Component has border styling</rdfs:comment>
+        <rdfs:label>has border</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasBoundingBox -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasBoundingBox">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
+        <rdfs:comment>Extraction result includes spatial bounding box coordinates</rdfs:comment>
+        <rdfs:label>has bounding box</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasComplianceScore -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasComplianceScore">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#scoredFor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:comment>Component or screen has compliance/quality score</rdfs:comment>
+        <rdfs:label>has compliance score</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasDesignPrinciple -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasDesignPrinciple">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:comment>UIComponent applies specific design principle</rdfs:comment>
+        <rdfs:label>has design principle</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasGradient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasGradient">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Gradient"/>
+        <rdfs:comment>Component has gradient background</rdfs:comment>
+        <rdfs:label>has gradient</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasHoverEffect -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasHoverEffect">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Button"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Link"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonHoverEffect"/>
+        <rdfs:comment>Interactive component has hover behavior</rdfs:comment>
+        <rdfs:label>has hover effect</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasInteractionState -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasInteractionState">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Button"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Checkbox"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Textfield"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates"/>
+        <rdfs:comment>Interactive component has specific interaction state</rdfs:comment>
+        <rdfs:label>has interaction state</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasIssue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasIssue">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:comment>Component or screen has identified usability/accessibility issue</rdfs:comment>
+        <rdfs:label>has issue</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasShadow -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasShadow">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/39321000"/>
+        <rdfs:comment>Component has shadow effect</rdfs:comment>
+        <rdfs:label>has shadow</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasSource -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasSource">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#RecommendationSource"/>
+        <rdfs:comment>Recommendation has authoritative source</rdfs:comment>
+        <rdfs:label>has source</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasSpacing -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasSpacing">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Spacing"/>
+        <rdfs:comment>Component applies spacing rule (margin, padding, gap)</rdfs:comment>
+        <rdfs:label>has spacing</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasTypography -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasTypography">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Button"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Heading"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Label"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Textfield"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:comment>Text component uses specific typography settings</rdfs:comment>
+        <rdfs:label>has typography</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasVisualHierarchy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasVisualHierarchy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#VisualHierarchy"/>
+        <rdfs:comment>Component or screen has visual hierarchy analysis</rdfs:comment>
+        <rdfs:label>has visual hierarchy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasWhitespaceAnalysis -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasWhitespaceAnalysis">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WhitespaceAnalysis"/>
+        <rdfs:comment>Component or screen has whitespace analysis</rdfs:comment>
+        <rdfs:label>has whitespace analysis</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#impactsUserTask -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#impactsUserTask">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:comment>Issue affects user ability to complete task</rdfs:comment>
+        <rdfs:label>impacts user task</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#impediment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#impediment">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:comment>Component or issue blocks user task completion</rdfs:comment>
+        <rdfs:label>impediment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueIn">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Issue exists in component or screen</rdfs:comment>
+        <rdfs:label>issue in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsAccessibilityRequirement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsAccessibilityRequirement">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#metBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:comment>Component satisfies accessibility requirement or standard</rdfs:comment>
+        <rdfs:label>meets accessibility requirement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsComplianceThreshold -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsComplianceThreshold">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAGLevel"/>
+        <rdfs:comment>Score meets specified WCAG conformance level</rdfs:comment>
+        <rdfs:label>meets compliance threshold</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#metBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#metBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Accessibility requirement is met by component</rdfs:comment>
+        <rdfs:label>met by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#performedOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#performedOn">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>User task performed on component or screen</rdfs:comment>
+        <rdfs:label>performed on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#producesExtractionResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#producesExtractionResult">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:comment>Screen produces extraction results</rdfs:comment>
+        <rdfs:label>produces extraction result</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#recommends -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#recommends">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Recommendation targets specific component or design principle</rdfs:comment>
+        <rdfs:label>recommends</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#referencesComponentDetection -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#referencesComponentDetection">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection"/>
+        <rdfs:comment>Recommendation grounded in extracted component instance (anti-hallucination)</rdfs:comment>
+        <rdfs:label>references component detection</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#referencesDesignPattern -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#referencesDesignPattern">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPattern"/>
+        <rdfs:comment>Recommendation cites relevant design pattern or best practice</rdfs:comment>
+        <rdfs:label>references design pattern</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#referencesWCAGStandard -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#referencesWCAGStandard">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityIssue"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAGLevel"/>
+        <rdfs:comment>Recommendation or issue references WCAG guideline</rdfs:comment>
+        <rdfs:label>references WCAG standard</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#requiredForUserProfile -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#requiredForUserProfile">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:range rdf:resource="http://schema.org/ProfilePage"/>
+        <rdfs:comment>Accessibility requirement needed for user profile</rdfs:comment>
+        <rdfs:label>required for user profile</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#scoredFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#scoredFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Compliance score computed for component/screen</rdfs:comment>
+        <rdfs:label>scored for</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#suggestsFix -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#suggestsFix">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Recommendation suggests what to change or fix</rdfs:comment>
+        <rdfs:label>suggests fix</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#supportsInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#supportsInteraction">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#InteractionPattern"/>
+        <rdfs:comment>Component supports specific interaction pattern</rdfs:comment>
+        <rdfs:label>supports interaction</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#targetUserProfile -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#targetUserProfile">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UISystem"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://schema.org/ProfilePage"/>
+        <rdfs:comment>Screen or component designed for specific user profile</rdfs:comment>
+        <rdfs:label>target user profile</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#transitionsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#transitionsTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates"/>
+        <rdfs:comment>State transitions to another state (e.g., Normal -&gt; Hover -&gt; Active)</rdfs:comment>
+        <rdfs:label>transitions to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#usesDesignToken -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#usesDesignToken">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignToken"/>
+        <rdfs:comment>Component uses specific design token</rdfs:comment>
+        <rdfs:label>uses design token</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#usesLayout -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#usesLayout">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UISystem"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ImageLayout"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ResponsiveLayout"/>
+        <rdfs:comment>Screen or component uses specific layout type</rdfs:comment>
+        <rdfs:label>uses layout</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#validatesRecommendation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#validatesRecommendation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HallucinationCheck"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:comment>Hallucination check validates recommendation against KG</rdfs:comment>
+        <rdfs:label>validates recommendation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#violatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#violatedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#violatesAccessibilityRequirement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Accessibility requirement is violated by component</rdfs:comment>
+        <rdfs:label>violated by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#violatesAccessibilityRequirement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#violatesAccessibilityRequirement">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:comment>Component violates accessibility requirement</rdfs:comment>
+        <rdfs:label>violates accessibility requirement</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#visuallyNear -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#visuallyNear">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment>Component is visually adjacent to another</rdfs:comment>
+        <rdfs:label>visually near</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://schema.org/identifier -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/identifier">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_000179 -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/SIO_000179">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Button"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Label"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Visible label or text on component</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#accessibilityRequirementDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#accessibilityRequirementDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Description of accessibility requirement</rdfs:comment>
+        <rdfs:label>accessibility requirement description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#alignItems -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#alignItems">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FlexLayout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Align items: &apos;flex-start&apos;, &apos;center&apos;, &apos;flex-end&apos;, &apos;stretch&apos;</rdfs:comment>
+        <rdfs:label>align items</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#bestPracticeDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#bestPracticeDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BestPractice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Detailed description of best practice</rdfs:comment>
+        <rdfs:label>best practice description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#bestPracticeSource -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#bestPracticeSource">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BestPractice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Source authority: &apos;WCAG&apos;, &apos;Nielsen Norman&apos;, &apos;Material Design&apos;, &apos;Apple HIG&apos;</rdfs:comment>
+        <rdfs:label>best practice source</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#borderRadius -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#borderRadius">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Border"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Border radius in pixels</rdfs:comment>
+        <rdfs:label>border radius value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#borderStyle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#borderStyle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Border"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Border style: &apos;solid&apos;, &apos;dashed&apos;, &apos;dotted&apos;, &apos;double&apos;</rdfs:comment>
+        <rdfs:label>border style</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#borderWidth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#borderWidth">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Border"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Border width in pixels</rdfs:comment>
+        <rdfs:label>border width value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#boundingBoxAccuracy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#boundingBoxAccuracy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Accuracy of bounding box coordinates (0.0-1.0)</rdfs:comment>
+        <rdfs:label>bounding box accuracy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#buttonAlignment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#buttonAlignment">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Button"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Button alignment: &apos;left&apos;, &apos;center&apos;, &apos;right&apos;</rdfs:comment>
+        <rdfs:label>button alignment</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#buttonSizeValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#buttonSizeValue">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Button"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Button size: &apos;small&apos;, &apos;medium&apos;, &apos;large&apos;</rdfs:comment>
+        <rdfs:label>button size value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#calculatedAt -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#calculatedAt">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp when score was calculated</rdfs:comment>
+        <rdfs:label>calculated at</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#colorRole -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#colorRole">
+        <rdfs:domain rdf:resource="https://purl.dsmz.de/schema/Color"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Color role: &apos;primary&apos;, &apos;secondary&apos;, &apos;accent&apos;, &apos;background&apos;, &apos;text&apos;, &apos;border&apos;</rdfs:comment>
+        <rdfs:label>color role</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#columnCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#columnCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GridLayout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Number of columns in grid layout</rdfs:comment>
+        <rdfs:label>column count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#complianceLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#complianceLevel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BestPractice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Compliance level: &apos;Required&apos;, &apos;Recommended&apos;, &apos;Optional&apos;</rdfs:comment>
+        <rdfs:label>compliance level</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#confidenceScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#confidenceScore">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Confidence score from 0.0 to 1.0</rdfs:comment>
+        <rdfs:label>confidence score</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#contrastRatio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#contrastRatio">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Contrast ratio for WCAG compliance (e.g., 4.5)</rdfs:comment>
+        <rdfs:label>contrast ratio</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#detectedComponentType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#detectedComponentType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Type of component detected by vision API</rdfs:comment>
+        <rdfs:label>detected component type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#detectedTimestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#detectedTimestamp">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp when issue was detected</rdfs:comment>
+        <rdfs:label>detected timestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#detectionAccuracy -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#detectionAccuracy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Accuracy of component detection (0.0-1.0)</rdfs:comment>
+        <rdfs:label>detection accuracy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#deviceType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#deviceType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Target device: &apos;Mobile&apos;, &apos;Tablet&apos;, &apos;Desktop&apos;, &apos;Watch&apos;</rdfs:comment>
+        <rdfs:label>device type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#dominantColorValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#dominantColorValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ColorExtraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Dominant color detected in hex format</rdfs:comment>
+        <rdfs:label>dominant color value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#elementType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#elementType">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Type classification of UI element</rdfs:comment>
+        <rdfs:label>element type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#entityReferencedCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#entityReferencedCount">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Number of ontology entities referenced</rdfs:comment>
+        <rdfs:label>entity referenced count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractedText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractedText">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TextExtraction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Text content extracted from UI element</rdfs:comment>
+        <rdfs:label>extracted text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractionConfidence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractionConfidence">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Confidence score of extraction (0.0-1.0)</rdfs:comment>
+        <rdfs:label>extraction confidence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractionMethod -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractionMethod">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Method used for extraction: &apos;GeminiVision&apos;, &apos;CustomDetector&apos;, &apos;OCR&apos;</rdfs:comment>
+        <rdfs:label>extraction method</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractionTimestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractionTimestamp">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp when extraction was performed</rdfs:comment>
+        <rdfs:label>extraction timestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#flexDirection -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#flexDirection">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FlexLayout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Flex direction: &apos;row&apos;, &apos;column&apos;, &apos;row-reverse&apos;, &apos;column-reverse&apos;</rdfs:comment>
+        <rdfs:label>flex direction</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#focalPointX -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#focalPointX">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#RadialGradient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>X coordinate of radial gradient focal point</rdfs:comment>
+        <rdfs:label>focal point x</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#focalPointY -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#focalPointY">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#RadialGradient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Y coordinate of radial gradient focal point</rdfs:comment>
+        <rdfs:label>focal point y</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#fontSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#fontSize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Font size in pixels</rdfs:comment>
+        <rdfs:label>font size value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#fontStyle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#fontStyle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Font style: &apos;normal&apos;, &apos;italic&apos;, &apos;oblique&apos;</rdfs:comment>
+        <rdfs:label>font style</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#fontWeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#fontWeight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Font weight numeric value (100-900)</rdfs:comment>
+        <rdfs:label>font weight value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#generationTimestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#generationTimestamp">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp when recommendation was generated</rdfs:comment>
+        <rdfs:label>generation timestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#gradientAngle -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#gradientAngle">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LinearGradient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Linear gradient angle in degrees</rdfs:comment>
+        <rdfs:label>gradient angle</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#gradientDirection -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#gradientDirection">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LinearGradient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Gradient direction: &apos;top-bottom&apos;, &apos;left-right&apos;, &apos;diagonal&apos;</rdfs:comment>
+        <rdfs:label>gradient direction</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#gridSpacingValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#gridSpacingValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GridSpacing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Grid spacing between items in pixels</rdfs:comment>
+        <rdfs:label>grid spacing value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#gutterValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#gutterValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GutterSpacing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Gutter spacing value in pixels</rdfs:comment>
+        <rdfs:label>gutter value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hallucinationScore -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hallucinationScore">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HallucinationCheck"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Score indicating likelihood of hallucination (0.0-1.0)</rdfs:comment>
+        <rdfs:label>hallucination score</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hexValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hexValue">
+        <rdfs:domain rdf:resource="https://purl.dsmz.de/schema/Color"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Hexadecimal color value (e.g., #FF5733)</rdfs:comment>
+        <rdfs:label>hex value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isActive -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isActive">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Whether button state is currently active</rdfs:comment>
+        <rdfs:label>is active</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isEnabled -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isEnabled">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Whether element is enabled or disabled</rdfs:comment>
+        <rdfs:label>is enabled</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isFocusable -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isFocusable">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Whether element can receive keyboard focus</rdfs:comment>
+        <rdfs:label>is focusable</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isInteractive -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isInteractive">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Whether element is interactive (clickable, focusable)</rdfs:comment>
+        <rdfs:label>is interactive</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isValidated -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isValidated">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Whether recommendation passed hallucination check</rdfs:comment>
+        <rdfs:label>is validated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isVisible -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isVisible">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Whether element is currently visible</rdfs:comment>
+        <rdfs:label>is visible</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Number of issues affecting this score</rdfs:comment>
+        <rdfs:label>issue count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueDescription">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Detailed description of identified issue</rdfs:comment>
+        <rdfs:label>issue description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueImpact -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueImpact">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Description of user impact from this issue</rdfs:comment>
+        <rdfs:label>issue impact</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueStatus">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Status: &apos;Open&apos;, &apos;Acknowledged&apos;, &apos;Resolved&apos;, &apos;Closed&apos;</rdfs:comment>
+        <rdfs:label>issue status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#issueType">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Issue category: &apos;Accessibility&apos;, &apos;Usability&apos;, &apos;Consistency&apos;, &apos;Performance&apos;</rdfs:comment>
+        <rdfs:label>issue type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#justification -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#justification">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Semantic justification for recommendation</rdfs:comment>
+        <rdfs:label>justification</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#justifyContent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#justifyContent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FlexLayout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Justify content: &apos;flex-start&apos;, &apos;center&apos;, &apos;space-between&apos;, &apos;space-around&apos;</rdfs:comment>
+        <rdfs:label>justify content</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#layoutType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#layoutType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LayoutDetection"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Detected layout type: &apos;Grid&apos;, &apos;Flex&apos;, &apos;Stack&apos;</rdfs:comment>
+        <rdfs:label>layout type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#letterSpacing -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#letterSpacing">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Letter spacing in pixels or ems</rdfs:comment>
+        <rdfs:label>letter spacing value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#llmConfidence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#llmConfidence">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>LLM confidence in recommendation (0.0-1.0)</rdfs:comment>
+        <rdfs:label>llm confidence</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#llmModel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#llmModel">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>LLM model used: &apos;Gemini-Pro&apos;, &apos;Llama2&apos;, &apos;GPT-4&apos;</rdfs:comment>
+        <rdfs:label>llm model</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#llmTemperature -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#llmTemperature">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Temperature parameter used for LLM generation (0.0-2.0)</rdfs:comment>
+        <rdfs:label>llm temperature</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#marginSide -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#marginSide">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25563"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Margin side: &apos;top&apos;, &apos;right&apos;, &apos;bottom&apos;, &apos;left&apos;, &apos;all&apos;</rdfs:comment>
+        <rdfs:label>margin side</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#marginValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#marginValue">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25563"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Margin value in pixels</rdfs:comment>
+        <rdfs:label>margin value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#minimumContrastRequired -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#minimumContrastRequired">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Minimum contrast ratio required for compliance</rdfs:comment>
+        <rdfs:label>minimum contrast required</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#minimumFontSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#minimumFontSize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Minimum font size in pixels for accessibility</rdfs:comment>
+        <rdfs:label>minimum font size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#opacityValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#opacityValue">
+        <rdfs:domain rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/128305008"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Opacity value between 0.0 and 1.0</rdfs:comment>
+        <rdfs:label>opacity value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#paddingSide -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#paddingSide">
+        <rdfs:domain rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/257889009"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Padding side: &apos;top&apos;, &apos;right&apos;, &apos;bottom&apos;, &apos;left&apos;, &apos;all&apos;</rdfs:comment>
+        <rdfs:label>padding side</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#paddingValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#paddingValue">
+        <rdfs:domain rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/257889009"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Padding value in pixels</rdfs:comment>
+        <rdfs:label>padding value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#patternCategory -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#patternCategory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPattern"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Category: &apos;Navigation&apos;, &apos;Input&apos;, &apos;Content&apos;, &apos;Feedback&apos;, &apos;Layout&apos;</rdfs:comment>
+        <rdfs:label>pattern category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#patternDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#patternDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPattern"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Description of design pattern purpose and usage</rdfs:comment>
+        <rdfs:label>pattern description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#priorityLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#priorityLevel">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Priority: &apos;Critical&apos;, &apos;High&apos;, &apos;Medium&apos;, &apos;Low&apos;</rdfs:comment>
+        <rdfs:label>priority level</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#radialRadius -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#radialRadius">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#RadialGradient"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Radial gradient radius in pixels</rdfs:comment>
+        <rdfs:label>radial radius</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#recommendationRationale -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#recommendationRationale">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Detailed explanation of why this recommendation was made</rdfs:comment>
+        <rdfs:label>recommendation rationale</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#recommendationText -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#recommendationText">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Textual description of recommendation</rdfs:comment>
+        <rdfs:label>recommendation text</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#recommendationType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#recommendationType">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Type: &apos;Accessibility&apos;, &apos;Usability&apos;, &apos;Design&apos;, &apos;Consistency&apos;</rdfs:comment>
+        <rdfs:label>recommendation type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#referencesKnownEntity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#referencesKnownEntity">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Whether recommendation references entities in knowledge graph</rdfs:comment>
+        <rdfs:label>references known entity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#rgbValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#rgbValue">
+        <rdfs:domain rdf:resource="https://purl.dsmz.de/schema/Color"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>RGB color value (e.g., rgb(255,87,51))</rdfs:comment>
+        <rdfs:label>rgb value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#rowCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#rowCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GridLayout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Number of rows in grid layout</rdfs:comment>
+        <rdfs:label>row count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#scoreCategory -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#scoreCategory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Score category: &apos;Excellent&apos;, &apos;Good&apos;, &apos;Fair&apos;, &apos;Poor&apos;</rdfs:comment>
+        <rdfs:label>score category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#scoreValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#scoreValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Numerical score value from 0.0 to 100.0</rdfs:comment>
+        <rdfs:label>score value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#severityLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#severityLevel">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Severity: &apos;Critical&apos;, &apos;High&apos;, &apos;Medium&apos;, &apos;Low&apos;</rdfs:comment>
+        <rdfs:label>severity level</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#shadowBlurRadius -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#shadowBlurRadius">
+        <rdfs:domain rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/39321000"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Blur radius of shadow in pixels</rdfs:comment>
+        <rdfs:label>shadow blur radius</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#shadowIntensity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#shadowIntensity">
+        <rdfs:domain rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/39321000"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Shadow intensity from 0.0 to 1.0</rdfs:comment>
+        <rdfs:label>shadow intensity value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#shadowOffsetX -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#shadowOffsetX">
+        <rdfs:domain rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/39321000"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Horizontal shadow offset in pixels</rdfs:comment>
+        <rdfs:label>shadow offset x</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#shadowOffsetY -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#shadowOffsetY">
+        <rdfs:domain rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/39321000"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Vertical shadow offset in pixels</rdfs:comment>
+        <rdfs:label>shadow offset y</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#stackOrientation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#stackOrientation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#StackLayout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Stack orientation: &apos;vertical&apos;, &apos;horizontal&apos;</rdfs:comment>
+        <rdfs:label>stack orientation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#successRate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#successRate">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Task success rate as percentage (0.0-100.0)</rdfs:comment>
+        <rdfs:label>success rate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#supportsScreenReader -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#supportsScreenReader">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Whether element is compatible with screen readers</rdfs:comment>
+        <rdfs:label>supports screen reader</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#taskDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#taskDescription">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Detailed description of user task</rdfs:comment>
+        <rdfs:label>task description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#taskFrequency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#taskFrequency">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>How often task is performed: &apos;Daily&apos;, &apos;Weekly&apos;, &apos;Monthly&apos;, &apos;Rare&apos;</rdfs:comment>
+        <rdfs:label>task frequency</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#taskPriority -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#taskPriority">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Priority of task: &apos;Primary&apos;, &apos;Secondary&apos;, &apos;Tertiary&apos;</rdfs:comment>
+        <rdfs:label>task priority</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#textAlignment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#textAlignment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Text alignment: &apos;left&apos;, &apos;center&apos;, &apos;right&apos;, &apos;justify&apos;</rdfs:comment>
+        <rdfs:label>text alignment value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#textTransform -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#textTransform">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Text transformation: &apos;uppercase&apos;, &apos;lowercase&apos;, &apos;capitalize&apos;</rdfs:comment>
+        <rdfs:label>text transform type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#tokenCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#tokenCount">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Number of tokens in LLM response</rdfs:comment>
+        <rdfs:label>token count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#transitionType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#transitionType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonHoverEffect"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Transition type: &apos;fade&apos;, &apos;scale&apos;, &apos;slide&apos;, &apos;none&apos;</rdfs:comment>
+        <rdfs:label>transition type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#usageContext -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#usageContext">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPattern"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Context where pattern is most effective</rdfs:comment>
+        <rdfs:label>usage context</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#validationMessage -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#validationMessage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HallucinationCheck"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Detailed message explaining validation result</rdfs:comment>
+        <rdfs:label>validation message</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#validationStatus -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#validationStatus">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HallucinationCheck"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Validation status: &apos;Passed&apos;, &apos;Failed&apos;, &apos;Pending&apos;</rdfs:comment>
+        <rdfs:label>validation status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#validationTimestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#validationTimestamp">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HallucinationCheck"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>Timestamp when validation was performed</rdfs:comment>
+        <rdfs:label>validation timestamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#viewportSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#viewportSize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ResponsiveLayout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Viewport size range (e.g., &apos;320px-768px&apos;)</rdfs:comment>
+        <rdfs:label>viewport size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#wcagGuidelineNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#wcagGuidelineNumber">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>WCAG guideline reference (e.g., &apos;1.4.3&apos;, &apos;2.1.1&apos;)</rdfs:comment>
+        <rdfs:label>wcag guideline number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#wcagLevelValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#wcagLevelValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAGLevel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>WCAG conformance level: &apos;A&apos;, &apos;AA&apos;, &apos;AAA&apos;</rdfs:comment>
+        <rdfs:label>wcag level value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#xCoordinate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#xCoordinate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>X coordinate of bounding box (top-left)</rdfs:comment>
+        <rdfs:label>x coordinate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#yCoordinate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#yCoordinate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Y coordinate of bounding box (top-left)</rdfs:comment>
+        <rdfs:label>y coordinate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/accessibilityAPI -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/accessibilityAPI">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/accessibilityFeature -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/accessibilityFeature">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/height -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/height">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LineHeightSpacing"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Height of screen in pixels</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/image -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/image">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/name -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/name">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BestPractice"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPattern"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:domain rdf:resource="https://purl.dsmz.de/schema/Color"/>
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Human-readable name of component</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/position -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/position">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/width -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/width">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ResponsiveLayout"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/128305008 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/128305008">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:label>Opacity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/257889009 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/257889009">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:label>Padding</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.bioontology.org/ontology/SNOMEDCT/39321000 -->
+
+    <owl:Class rdf:about="http://purl.bioontology.org/ontology/SNOMEDCT/39321000">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:label>Shadow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C101129 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C101129">
+        <rdfs:label>Task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C210922 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C210922">
+        <rdfs:label>Issue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C25197 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C25197">
+        <rdfs:label>Recommendation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C25563 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C25563">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:label>Margin</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="http://schema.org/Person"/>
+    
+
+
+    <!-- http://schema.org/ProfilePage -->
+
+    <owl:Class rdf:about="http://schema.org/ProfilePage">
+        <rdfs:label>ProfilePage</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityIssue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityIssue">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:comment>Issue violating WCAG or accessibility standards.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityProfile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityProfile">
+        <rdfs:subClassOf rdf:resource="http://schema.org/ProfilePage"/>
+        <rdfs:comment>Profile describing user accessibility needs.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRecommendation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRecommendation">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:comment>Suggestion for improving accessibility compliance.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement">
+        <rdfs:label>AccessibilityRequirement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityScore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityScore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:comment>WCAG compliance score (0-100).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ArticleCard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ArticleCard">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/Card"/>
+        <rdfs:comment>Card layout for articles or posts.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BestPractice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BestPractice">
+        <rdfs:comment>Industry-recognized best practice for UI/UX.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Border -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Border">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:comment>Spatial coordinates of detected UI element.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoxShadow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoxShadow">
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/39321000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BrowsingTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BrowsingTask">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:comment>Task where user explores content without specific target.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonHoverEffect -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonHoverEffect">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#InteractionState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#CheckoutPage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#CheckoutPage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:comment>Page for purchase completion.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ColorBlindnessSupport -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ColorBlindnessSupport">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:comment>Support for various types of color vision deficiency.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ColorExtraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ColorExtraction">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:comment>Detected color values from UI.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ColorToken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ColorToken">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignToken"/>
+        <rdfs:comment>Color value token.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore">
+        <rdfs:comment>Quantitative score for standard compliance.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:comment>Identified UI component type from image.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ConfigurationTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ConfigurationTask">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:comment>Task where user configures settings or preferences.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ConsistencyIssue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ConsistencyIssue">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:comment>Issue where design deviates from system standards.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ConsistencyRecommendation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ConsistencyRecommendation">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:comment>Suggestion for design system consistency.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DataEntryTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DataEntryTask">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:comment>Task focusing on entering or editing data.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DemographicProfile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DemographicProfile">
+        <rdfs:subClassOf rdf:resource="http://schema.org/ProfilePage"/>
+        <rdfs:comment>Profile describing demographic attributes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPattern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPattern">
+        <rdfs:comment>Reusable solution to common UI/UX design problem.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples">
+        <rdfs:label>Design Principles</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignRecommendation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignRecommendation">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:comment>Suggestion for visual design improvements.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignScore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignScore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:comment>Visual design consistency and quality score.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignToken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignToken">
+        <rdfs:comment>Reusable design token for consistency.</rdfs:comment>
+        <rdfs:label>Design Token</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignerUser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignerUser">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/User"/>
+        <rdfs:comment>User who designs the UI/UX.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesktopLayout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesktopLayout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ResponsiveLayout"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DeveloperUser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DeveloperUser">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/User"/>
+        <rdfs:comment>User who implements the UI.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DisabledButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DisabledButton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#EndUser -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#EndUser">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/User"/>
+        <rdfs:comment>Typical application user.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ExpertiseProfile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ExpertiseProfile">
+        <rdfs:subClassOf rdf:resource="http://schema.org/ProfilePage"/>
+        <rdfs:comment>Profile describing user technical or domain expertise.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FactValidation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FactValidation">
+        <rdfs:comment>Verification that facts come from extracted UI or knowledge graph.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FlexLayout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FlexLayout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ImageLayout"/>
+        <rdfs:comment>Flexible layout that adapts to available space.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FocusedButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FocusedButton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FormPage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#FormPage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:comment>Page focused on data input form.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Gradient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Gradient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GridLayout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GridLayout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ImageLayout"/>
+        <rdfs:comment>Layout arranging items in rows and columns with gutters.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GridSpacing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GridSpacing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Spacing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GutterSpacing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GutterSpacing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Spacing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HallucinationCheck -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HallucinationCheck">
+        <rdfs:comment>Validation ensuring recommendation references real UI components.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HoveredButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HoveredButton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#IconButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#IconButton">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/Button"/>
+        <rdfs:comment>Button represented mainly by an icon.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ImageLayout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ImageLayout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#InteractionPattern -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#InteractionPattern">
+        <rdfs:comment>Expected interaction behavior pattern.</rdfs:comment>
+        <rdfs:label>Interaction Pattern</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#InteractionState -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#InteractionState"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LandingPage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LandingPage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:comment>First page users encounter in application.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LayoutDetection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LayoutDetection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:comment>Identified layout structure from image.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LineHeightSpacing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LineHeightSpacing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Spacing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LinearGradient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LinearGradient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Gradient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ListingPage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ListingPage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:comment>Page displaying collection of items.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#MobileLayout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#MobileLayout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ResponsiveLayout"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#NormalButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#NormalButton">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ButtonStates"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PreferenceProfile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PreferenceProfile">
+        <rdfs:subClassOf rdf:resource="http://schema.org/ProfilePage"/>
+        <rdfs:comment>Profile capturing user style and interaction preferences.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PrimaryButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PrimaryButton">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/Button"/>
+        <rdfs:comment>Main action button emphasizing the primary call-to-action.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ProductCard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ProductCard">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/Card"/>
+        <rdfs:comment>Card layout for presenting product information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ProductPage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ProductPage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <rdfs:comment>Page displaying single product details.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ProfileCard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ProfileCard">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/Card"/>
+        <rdfs:comment>Card layout summarizing a user profile.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PurchaseTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PurchaseTask">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:comment>Task where user intends to buy something.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#RadialGradient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#RadialGradient">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Gradient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#RecommendationSource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#RecommendationSource">
+        <rdfs:comment>Source authority for recommendation (WCAG, Material Design, etc.).</rdfs:comment>
+        <rdfs:label>Recommendation Source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ResponsiveLayout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ResponsiveLayout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ImageLayout"/>
+        <rdfs:comment>Layout that adapts to different screen sizes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UISystem"/>
+        <rdfs:comment>Complete page or screen view.</rdfs:comment>
+        <rdfs:label>Screen</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ScreenReaderCompatibility -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ScreenReaderCompatibility">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:comment>Compatibility with assistive screen reader technology.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#SearchTask -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#SearchTask">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+        <rdfs:comment>Task where user has specific target to find.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#SecondaryButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#SecondaryButton">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/Button"/>
+        <rdfs:comment>Secondary action button with lower visual priority.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Sidebar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Sidebar">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/MoleculeUIElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Spacing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Spacing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#SpacingToken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#SpacingToken">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignToken"/>
+        <rdfs:comment>Spacing value token.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#StackLayout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#StackLayout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ImageLayout"/>
+        <rdfs:comment>Layout stacking components vertically or horizontally.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TabletLayout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TabletLayout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ResponsiveLayout"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TextButton -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TextButton">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/Button"/>
+        <rdfs:comment>Button represented mostly as text, low emphasis.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TextExtraction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TextExtraction">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:comment>Extracted text content from UI elements.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TextShadow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TextShadow">
+        <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/SNOMEDCT/39321000"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TypographyToken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TypographyToken">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignToken"/>
+        <rdfs:comment>Typography value token.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UISystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UISystem">
+        <rdfs:comment>Root class representing an entire UI interface or application.</rdfs:comment>
+        <rdfs:label>UISystem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UsabilityIssue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UsabilityIssue">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:comment>Issue reducing user experience quality.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UsabilityRecommendation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UsabilityRecommendation">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:comment>Suggestion for enhancing user experience.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UsabilityScore -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UsabilityScore">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:comment>Overall usability assessment score.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#VisualHierarchy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#VisualHierarchy">
+        <rdfs:comment>Analysis of visual hierarchy and element importance.</rdfs:comment>
+        <rdfs:label>Visual Hierarchy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAGLevel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAGLevel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <rdfs:comment>WCAG conformance level (A, AA, AAA).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WhitespaceAnalysis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WhitespaceAnalysis">
+        <rdfs:comment>Analysis of whitespace distribution and density.</rdfs:comment>
+        <rdfs:label>Whitespace Analysis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Result -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/Result">
+        <rdfs:label>Result</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://purl.dsmz.de/schema/Color -->
+
+    <owl:Class rdf:about="https://purl.dsmz.de/schema/Color">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPrinciples"/>
+        <rdfs:label>Color</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/AtomUIElement -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/AtomUIElement">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:label>AtomUIElement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Avatar -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Avatar">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Avatar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Button -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Button">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Button</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Card -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Card">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/OrganismUIElement"/>
+        <rdfs:label>Card</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Checkbox -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Checkbox">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Checkbox</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/ColumnHeader -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/ColumnHeader">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/ContainerUIElement"/>
+        <rdfs:label>ColumnHeader</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Container -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Container">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/ContainerUIElement"/>
+        <rdfs:label>Container</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/ContainerUIElement -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/ContainerUIElement">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:label>ContainerUIElement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Datepicker -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Datepicker">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Datepicker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Dialog -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Dialog">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/MoleculeUIElement"/>
+        <rdfs:label>Dialog</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/DirectoryStructure -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/DirectoryStructure">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/ContainerUIElement"/>
+        <rdfs:label>DirectoryStructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Divider -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Divider">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/MoleculeUIElement"/>
+        <rdfs:label>Divider</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Dropdown -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Dropdown">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/MoleculeUIElement"/>
+        <rdfs:label>Dropdown</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Footer -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Footer">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/OrganismUIElement"/>
+        <rdfs:label>Footer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Grid -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Grid">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/ContainerUIElement"/>
+        <rdfs:label>Grid</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Header -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Header">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/OrganismUIElement"/>
+        <rdfs:label>Header</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Heading -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Heading">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Heading</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Icon -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Icon">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Icon</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/InputElement -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/InputElement">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>InputElement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Label -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Label">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Label</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Link -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Link">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Link</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/List -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/List">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/ContainerUIElement"/>
+        <rdfs:label>List</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/MoleculeUIElement -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/MoleculeUIElement">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:label>MoleculeUIElement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/MultiSelection -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/MultiSelection">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/ContainerUIElement"/>
+        <rdfs:label>MultiSelection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/NavigationBar -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/NavigationBar">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/MoleculeUIElement"/>
+        <rdfs:label>NavigationBar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/OrganismUIElement -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/OrganismUIElement">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:label>OrganismUIElement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Pagination -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Pagination">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/MoleculeUIElement"/>
+        <rdfs:label>Pagination</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Radiobutton -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Radiobutton">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Radiobutton</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Searchbar -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Searchbar">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/MoleculeUIElement"/>
+        <rdfs:label>Searchbar</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Section -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Section">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/OrganismUIElement"/>
+        <rdfs:label>Section</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/SingleSelection -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/SingleSelection">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/ContainerUIElement"/>
+        <rdfs:label>SingleSelection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Step -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Step">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/MoleculeUIElement"/>
+        <rdfs:label>Step</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Subheading -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Subheading">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Subheading</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Subtitle -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Subtitle">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Subtitle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Switch -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Switch">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Switch</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Tabs -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Tabs">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/ContainerUIElement"/>
+        <rdfs:label>Tabs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Textfield -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Textfield">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Textfield</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Thumbnail -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Thumbnail">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/MoleculeUIElement"/>
+        <rdfs:label>Thumbnail</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Timepicker -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Timepicker">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Timepicker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Title -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Title">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/AtomUIElement"/>
+        <rdfs:label>Title</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/Tooltip -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/Tooltip">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/MoleculeUIElement"/>
+        <rdfs:label>Tooltip</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/TreeView -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/TreeView">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/ContainerUIElement"/>
+        <rdfs:label>TreeView</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/UIElement -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/UIElement">
+        <rdfs:label>UIElement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/UITable -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/UITable">
+        <rdfs:subClassOf rdf:resource="https://uxiverse.com/ontology/ContainerUIElement"/>
+        <rdfs:label>UITable</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://uxiverse.com/ontology/User -->
+
+    <owl:Class rdf:about="https://uxiverse.com/ontology/User">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Person"/>
+        <rdfs:label>User</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
+        <xCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">650.0</xCoordinate>
+        <yCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">400.0</yCoordinate>
+        <schema:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</schema:height>
+        <schema:width rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">620</schema:width>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
+        <xCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">650.0</xCoordinate>
+        <yCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">468.0</yCoordinate>
+        <schema:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</schema:height>
+        <schema:width rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">620</schema:width>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox003 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox003">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
+        <xCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">650.0</xCoordinate>
+        <yCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">540.0</yCoordinate>
+        <schema:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52</schema:height>
+        <schema:width rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">620</schema:width>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#CompDetect001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#CompDetect001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComponentDetection"/>
+        <confirmsPresenceOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField"/>
+        <detectsComponent rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField"/>
+        <schema:identifier>password-field-detection</schema:identifier>
+        <detectedComponentType>Textfield</detectedComponentType>
+        <detectionAccuracy rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.96</detectionAccuracy>
+        <extractionMethod>GeminiVision</extractionMethod>
+        <extractionTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-04T10:29:00</extractionTimestamp>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HallucinationCheck001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HallucinationCheck001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#HallucinationCheck"/>
+        <validatesRecommendation rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Rec001"/>
+        <hallucinationScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</hallucinationScore>
+        <validationMessage>All referenced components exist in ComponentDetection results</validationMessage>
+        <validationStatus>Passed</validationStatus>
+        <validationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-04T10:31:30</validationTimestamp>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityIssue"/>
+        <addressedBy rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Rec001"/>
+        <affectsComponent rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField"/>
+        <issueIn rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField"/>
+        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_3_3_2"/>
+        <detectedTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-04T10:30:00</detectedTimestamp>
+        <issueDescription>Password field lacks visible label</issueDescription>
+        <issueImpact>Screen reader users cannot identify field purpose</issueImpact>
+        <issueStatus>Open</issueStatus>
+        <issueType>Accessibility</issueType>
+        <severityLevel>High</severityLevel>
+        <schema:name>Missing Label Issue</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityIssue"/>
+        <addressedBy rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Rec002"/>
+        <affectsComponent rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginButton"/>
+        <issueIn rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginButton"/>
+        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_1_4_3"/>
+        <detectedTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-04T10:30:00</detectedTimestamp>
+        <issueDescription>Button has insufficient color contrast ratio (2.8:1)</issueDescription>
+        <issueImpact>Users with visual impairments cannot distinguish button</issueImpact>
+        <issueStatus>Open</issueStatus>
+        <issueType>Accessibility</issueType>
+        <severityLevel>Critical</severityLevel>
+        <schema:name>Low Contrast Ratio</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginButton -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginButton">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PrimaryButton"/>
+        <schema:isPartOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginScreen"/>
+        <hasBoundingBox rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox003"/>
+        <hasIssue rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue002"/>
+        <schema:identifier>login-btn</schema:identifier>
+        <buttonAlignment>center</buttonAlignment>
+        <buttonSizeValue>large</buttonSizeValue>
+        <contrastRatio rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.8</contrastRatio>
+        <schema:name>Login Button</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginScreen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginScreen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Screen"/>
+        <hasIssue rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue001"/>
+        <hasIssue rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue002"/>
+        <deviceType>Desktop</deviceType>
+        <schema:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1080</schema:height>
+        <schema:name>Login Page</schema:name>
+        <schema:width rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1920</schema:width>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField">
+        <rdf:type rdf:resource="https://uxiverse.com/ontology/Textfield"/>
+        <schema:isPartOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginScreen"/>
+        <hasBoundingBox rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox002"/>
+        <hasIssue rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue001"/>
+        <schema:identifier>password-input</schema:identifier>
+        <isEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isEnabled>
+        <schema:name>Password</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Rec001 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Rec001">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRecommendation"/>
+        <basedOnIssue rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue001"/>
+        <recommends rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField"/>
+        <referencesComponentDetection rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#CompDetect001"/>
+        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_3_3_2"/>
+        <confidenceScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</confidenceScore>
+        <generationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-04T10:31:00</generationTimestamp>
+        <isValidated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isValidated>
+        <llmConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</llmConfidence>
+        <llmModel>Gemini-Pro</llmModel>
+        <priorityLevel>High</priorityLevel>
+        <recommendationRationale>WCAG 3.3.2 requires visible labels for all input fields</recommendationRationale>
+        <recommendationText>Add visible label &apos;Password&apos; above the password input field</recommendationText>
+        <recommendationType>Accessibility</recommendationType>
+        <schema:name>Add Password Label</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Rec002 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Rec002">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRecommendation"/>
+        <basedOnIssue rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue002"/>
+        <recommends rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginButton"/>
+        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_1_4_3"/>
+        <confidenceScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.98</confidenceScore>
+        <generationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-04T10:31:00</generationTimestamp>
+        <isValidated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isValidated>
+        <llmConfidence rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.98</llmConfidence>
+        <llmModel>Gemini-Pro</llmModel>
+        <priorityLevel>Critical</priorityLevel>
+        <recommendationRationale>Current contrast ratio is 2.8:1, below WCAG AA standard</recommendationRationale>
+        <recommendationText>Change button color to #0051D5 to achieve 4.5:1 contrast ratio</recommendationText>
+        <recommendationType>Accessibility</recommendationType>
+        <schema:name>Increase Button Contrast</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UsernameField -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#UsernameField">
+        <rdf:type rdf:resource="https://uxiverse.com/ontology/Textfield"/>
+        <schema:isPartOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginScreen"/>
+        <hasBoundingBox rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox001"/>
+        <schema:identifier>username-input</schema:identifier>
+        <isEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isEnabled>
+        <isFocusable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isFocusable>
+        <schema:name>Username</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_1_4_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_1_4_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <violatedBy rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginButton"/>
+        <accessibilityRequirementDescription>Text has contrast ratio of at least 4.5:1</accessibilityRequirementDescription>
+        <minimumContrastRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.5</minimumContrastRequired>
+        <wcagGuidelineNumber>1.4.3</wcagGuidelineNumber>
+        <schema:name>Contrast Minimum</schema:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_3_3_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_3_3_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+        <violatedBy rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField"/>
+        <accessibilityRequirementDescription>Labels or instructions are provided when content requires user input</accessibilityRequirementDescription>
+        <wcagGuidelineNumber>3.3.2</wcagGuidelineNumber>
+        <schema:name>Labels or Instructions</schema:name>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
