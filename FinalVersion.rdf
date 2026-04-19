@@ -3,6 +3,8 @@
      xml:base="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:ux="https://uxiverse.com/ontology/"
+     xmlns:SIO="http://semanticscience.org/ontology/sio.owl#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -10,14 +12,18 @@
      xmlns:ncit="http://purl.obolibrary.org/obo/NCIT_"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:schema="http://schema.org/"
-     xmlns:snomed="http://purl.bioontology.org/ontology/SNOMEDCT/">
+     xmlns:snomed="http://purl.bioontology.org/ontology/SNOMEDCT/"
+     xmlns:reproduceme="https://w3id.org/reproduceme#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign">
         <dc:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dc:created>
         <dc:creator>Tehreem/UOS</dc:creator>
         <dc:description xml:lang="en">An ontology for representing UI/UX design elements, accessibility requirements, design principles, and recommendations for interface evaluation.</dc:description>
         <dc:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-12</dc:modified>
+        <dc:rights xml:lang="en">This ontology is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0). You are free to share and adapt this ontology for any purpose, provided that appropriate credit is given to the original creator (Tehreem/UOS), a link to the license is provided, and any changes made are indicated. Full license text: https://creativecommons.org/licenses/by/4.0/</dc:rights>
         <dc:title xml:lang="en">UI/UX Design Ontology</dc:title>
         <rdfs:comment xml:lang="en">This ontology models UI/UX design components following Atomic Design principles, integrates accessibility standards (WCAG), and supports AI-powered design recommendation systems with hallucination detection.</rdfs:comment>
         <owl:versionInfo>1.0.0</owl:versionInfo>
@@ -66,6 +72,12 @@
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
@@ -96,6 +108,66 @@
     
 
 
+    <!-- http://www.w3.org/2003/11/swrl#argument1 -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#argument1"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#argument2 -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#argument2"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#arguments -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#arguments"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#body -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#body"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#builtin -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#builtin"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#classPredicate -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#classPredicate"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#head -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#head"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#iriValue -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#iriValue"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#propertyPredicate -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#propertyPredicate"/>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#variableName -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/11/swrl#variableName"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -121,6 +193,30 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.allotrope.org/ontologies/property#AFX_0002853 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.allotrope.org/ontologies/property#AFX_0002853">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#complianceThresholdMetBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAGLevel"/>
+        <rdfs:comment>Score meets specified WCAG conformance level</rdfs:comment>
+        <rdfs:label>fulfills</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/SEPIO_0000101 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/SEPIO_0000101">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
+        <rdfs:comment>Recommendation contradicts another recommendation</rdfs:comment>
+        <rdfs:label>contradicts</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
@@ -188,6 +284,29 @@
     
 
 
+    <!-- http://semanticscience.org/resource/SIO_001158 -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_001158">
+        <owl:inverseOf rdf:resource="http://semanticscience.org/resource/SIO_001159"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:comment xml:lang="en">Relates an accessibility issue or design principle to the UI element it has an impact on. Inverse of affectedBy.</rdfs:comment>
+        <rdfs:label xml:lang="en">affects</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://semanticscience.org/resource/SIO_001159 -->
+
+    <owl:ObjectProperty rdf:about="http://semanticscience.org/resource/SIO_001159">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
+        <rdfs:comment xml:lang="en">Relates a UI element to the accessibility issue or design principle that has an impact on it. Inverse of affects.</rdfs:comment>
+        <rdfs:label xml:lang="en">affectedBy</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#addressedBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#addressedBy">
@@ -196,29 +315,6 @@
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
         <rdfs:comment>Issue addressed by recommendation</rdfs:comment>
         <rdfs:label>addressed by</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#affectedByIssue -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#affectedByIssue">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#affectsComponent"/>
-        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
-        <rdfs:comment>Component is affected by issue</rdfs:comment>
-        <rdfs:label>affected by issue</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#affectsComponent -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#affectsComponent">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C210922"/>
-        <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
-        <rdfs:comment>Issue impacts specific component</rdfs:comment>
-        <rdfs:label>affects component</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -375,7 +471,6 @@
     <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#complianceThresholdMetBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#complianceThresholdMetBy">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsComplianceThreshold"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAGLevel"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
         <rdfs:comment>WCAG level is met by compliance score</rdfs:comment>
@@ -446,18 +541,6 @@
         <rdfs:range rdf:resource="https://uxiverse.com/ontology/UIElement"/>
         <rdfs:comment>Parent UIComponent or System contains child UIComponent</rdfs:comment>
         <rdfs:label>contains</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#contradicts -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#contradicts">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
-        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/NCIT_C25197"/>
-        <rdfs:comment>Recommendation contradicts another recommendation</rdfs:comment>
-        <rdfs:label>contradicts</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -1095,17 +1178,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsComplianceThreshold -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsComplianceThreshold">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ComplianceScore"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAGLevel"/>
-        <rdfs:comment>Score meets specified WCAG conformance level</rdfs:comment>
-        <rdfs:label>meets compliance threshold</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#metBy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#metBy">
@@ -1682,6 +1754,39 @@
     
 
 
+    <!-- http://purl.allotrope.org/ontologies/property#AFX_0000604 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.allotrope.org/ontologies/property#AFX_0000604">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GridLayout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Number of columns in grid layout</rdfs:comment>
+        <rdfs:label>column count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000404 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000404">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>X coordinate of bounding box (top-left)</rdfs:comment>
+        <rdfs:label>x coordinate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000406 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000406">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Y coordinate of bounding box (top-left)</rdfs:comment>
+        <rdfs:label>y coordinate</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://schema.org/identifier -->
 
     <owl:DatatypeProperty rdf:about="http://schema.org/identifier">
@@ -1719,17 +1824,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#accessibilityRequirementDescription -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#accessibilityRequirementDescription">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Description of accessibility requirement</rdfs:comment>
-        <rdfs:label>accessibility requirement description</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#alignItems -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#alignItems">
@@ -1737,17 +1831,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Align items: &apos;flex-start&apos;, &apos;center&apos;, &apos;flex-end&apos;, &apos;stretch&apos;</rdfs:comment>
         <rdfs:label>align items</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#bestPracticeDescription -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#bestPracticeDescription">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BestPractice"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Detailed description of best practice</rdfs:comment>
-        <rdfs:label>best practice description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1847,17 +1930,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Color role: &apos;primary&apos;, &apos;secondary&apos;, &apos;accent&apos;, &apos;background&apos;, &apos;text&apos;, &apos;border&apos;</rdfs:comment>
         <rdfs:label>color role</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#columnCount -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#columnCount">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GridLayout"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment>Number of columns in grid layout</rdfs:comment>
-        <rdfs:label>column count</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1972,6 +2044,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#errorIndicatorType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#errorIndicatorType">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/InputElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">How errors are shown: &apos;color-only&apos;, &apos;icon&apos;, &apos;text&apos;, &apos;combined&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">error indicator type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractedText -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#extractedText">
@@ -2045,6 +2128,28 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>Y coordinate of radial gradient focal point</rdfs:comment>
         <rdfs:label>focal point y</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#focusIndicatorContrast -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#focusIndicatorContrast">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">The contrast ratio of the focus indicator against its surrounding background, used to evaluate WCAG 2.4.11 compliance (minimum 3:1).</rdfs:comment>
+        <rdfs:label xml:lang="en">focus indicator contrast</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#focusIndicatorVisible -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#focusIndicatorVisible">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether the UI element displays a visible focus indicator when it receives keyboard focus, as required by WCAG 2.4.7 (Level AA).</rdfs:comment>
+        <rdfs:label xml:lang="en">focus indicator visible</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2126,17 +2231,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#gutterValue -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#gutterValue">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GutterSpacing"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment>Gutter spacing value in pixels</rdfs:comment>
-        <rdfs:label>gutter value</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hallucinationScore -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hallucinationScore">
@@ -2144,6 +2238,50 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>Score indicating likelihood of hallucination (0.0-1.0)</rdfs:comment>
         <rdfs:label>hallucination score</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasFocusIndicator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasFocusIndicator">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Specifies whether the UI element has a focus indicator mechanism defined (e.g., outline, border, highlight), regardless of its visibility. Related to WCAG 2.4.7 and 2.4.11.</rdfs:comment>
+        <rdfs:label xml:lang="en">has focus indicator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasRequiredIndicator -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasRequiredIndicator">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/InputElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether the input element visually marks itself as a required field (e.g., via asterisk or label text), supporting WCAG 3.3.2 guidance on labels and instructions.</rdfs:comment>
+        <rdfs:label xml:lang="en">has required indicator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasTextLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasTextLabel">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether the UI element has a human-readable text label, as required by WCAG 1.3.1 (Info and Relationships) and 4.1.2 (Name, Role, Value).</rdfs:comment>
+        <rdfs:label xml:lang="en">has text label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasVisibleLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#hasVisibleLabel">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/InputElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether the input element has a persistently visible label (as opposed to placeholder-only labelling), which is required for accessibility per WCAG 2.4.6 and 3.3.2.</rdfs:comment>
+        <rdfs:label xml:lang="en">has visible label</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2188,6 +2326,17 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
         <rdfs:comment>Whether element can receive keyboard focus</rdfs:comment>
         <rdfs:label>is focusable</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isIconOnly -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#isIconOnly">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/Button"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether the button is rendered with only an icon and no visible text label. Icon-only buttons must provide an accessible name via aria-label or tooltip to satisfy WCAG 1.1.1 and 4.1.2.</rdfs:comment>
+        <rdfs:label xml:lang="en">is icon only</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2324,6 +2473,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#lineHeight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#lineHeight">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">The vertical spacing between lines of text, expressed as a multiplier of the font size. WCAG 1.4.12 (Text Spacing) requires a minimum line height of 1.5 times the font size.</rdfs:comment>
+        <rdfs:label xml:lang="en">line height</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#llmConfidence -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#llmConfidence">
@@ -2375,6 +2535,39 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment>Margin value in pixels</rdfs:comment>
         <rdfs:label>margin value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsMinimumTargetSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsMinimumTargetSize">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether the interactive UI element meets the minimum touch target size of 44×44px (WCAG 2.5.5 Level AAA) or 24×24px (WCAG 2.5.8 Level AA).</rdfs:comment>
+        <rdfs:label xml:lang="en">meets minimum target size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsMinimumTextSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsMinimumTextSize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Indicates whether the text element meets the minimum readable font size threshold (typically 12px). Small text reduces readability for users with low vision.</rdfs:comment>
+        <rdfs:label xml:lang="en">meets minimum text size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsSpacingRequirements -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#meetsSpacingRequirements">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Whether text spacing meets WCAG 1.4.12 requirements</rdfs:comment>
+        <rdfs:label xml:lang="en">meets spacing requirements</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2441,17 +2634,6 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Category: &apos;Navigation&apos;, &apos;Input&apos;, &apos;Content&apos;, &apos;Feedback&apos;, &apos;Layout&apos;</rdfs:comment>
         <rdfs:label>pattern category</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#patternDescription -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#patternDescription">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPattern"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Description of design pattern purpose and usage</rdfs:comment>
-        <rdfs:label>pattern description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2654,13 +2836,24 @@
     
 
 
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#taskDescription -->
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#targetSizeHeight -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#taskDescription">
-        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/NCIT_C101129"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Detailed description of user task</rdfs:comment>
-        <rdfs:label>task description</rdfs:label>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#targetSizeHeight">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Touch target height in pixels from image analysis</rdfs:comment>
+        <rdfs:label xml:lang="en">target size height</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#targetSizeWidth -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#targetSizeWidth">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/UIElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Touch target width in pixels from image analysis</rdfs:comment>
+        <rdfs:label xml:lang="en">target size width</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2694,6 +2887,17 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>Text alignment: &apos;left&apos;, &apos;center&apos;, &apos;right&apos;, &apos;justify&apos;</rdfs:comment>
         <rdfs:label>text alignment value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#textSize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#textSize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Typography"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">Detected text size in pixels from image</rdfs:comment>
+        <rdfs:label xml:lang="en">text size</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2742,6 +2946,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#usesPlaceholderAsLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#usesPlaceholderAsLabel">
+        <rdfs:domain rdf:resource="https://uxiverse.com/ontology/InputElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment xml:lang="en">Anti-pattern: using placeholder instead of label</rdfs:comment>
+        <rdfs:label xml:lang="en">uses placeholder as label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#validationMessage -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#validationMessage">
@@ -2775,17 +2990,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#viewportSize -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#viewportSize">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ResponsiveLayout"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>Viewport size range (e.g., &apos;320px-768px&apos;)</rdfs:comment>
-        <rdfs:label>viewport size</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#wcagGuidelineNumber -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#wcagGuidelineNumber">
@@ -2797,35 +3001,13 @@
     
 
 
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#wcagLevelValue -->
+    <!-- http://www.w3.org/ns/prov#value -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#wcagLevelValue">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAGLevel"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>WCAG conformance level: &apos;A&apos;, &apos;AA&apos;, &apos;AAA&apos;</rdfs:comment>
-        <rdfs:label>wcag level value</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#xCoordinate -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#xCoordinate">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#value">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#GutterSpacing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment>X coordinate of bounding box (top-left)</rdfs:comment>
-        <rdfs:label>x coordinate</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#yCoordinate -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#yCoordinate">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment>Y coordinate of bounding box (top-left)</rdfs:comment>
-        <rdfs:label>y coordinate</rdfs:label>
+        <rdfs:comment>Gutter spacing value in pixels</rdfs:comment>
+        <rdfs:label>gutter value</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2917,6 +3099,17 @@
     
 
 
+    <!-- https://schema.org/size -->
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/size">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#ResponsiveLayout"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Viewport size range (e.g., &apos;320px-768px&apos;)</rdfs:comment>
+        <rdfs:label>viewport size</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://schema.org/width -->
 
     <owl:DatatypeProperty rdf:about="https://schema.org/width">
@@ -2932,6 +3125,38 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
         <rdfs:comment>Width in pixels</rdfs:comment>
         <rdfs:label>width</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/mixs/0000254 -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/mixs/0000254">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAGLevel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>WCAG conformance level: &apos;A&apos;, &apos;AA&apos;, &apos;AAA&apos;</rdfs:comment>
+        <rdfs:label>wcag level value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/reproduceme#description -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/reproduceme#description">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C101129"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BestPractice"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#DesignPattern"/>
+                    <rdf:Description rdf:about="https://uxiverse.com/ontology/UIElement"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Description of accessibility requirement,best practice,usertask,designpattern ,image description</rdfs:comment>
+        <rdfs:label>description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -3771,6 +3996,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TargetSizeIssue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TargetSizeIssue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityIssue"/>
+        <rdfs:comment xml:lang="en">Touch target too small (below 44×44px or 24×24px)</rdfs:comment>
+        <rdfs:label xml:lang="en">target size issue</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TextButton -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#TextButton">
@@ -4383,8 +4618,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox001">
         <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
-        <xCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">650.0</xCoordinate>
-        <yCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">400.0</yCoordinate>
+        <obo:IAO_0000404 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">650.0</obo:IAO_0000404>
+        <obo:IAO_0000406 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">400.0</obo:IAO_0000406>
         <schema:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</schema:height>
         <schema:width rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">620</schema:width>
     </owl:NamedIndividual>
@@ -4395,8 +4630,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox002">
         <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
-        <xCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">650.0</xCoordinate>
-        <yCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">468.0</yCoordinate>
+        <obo:IAO_0000404 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">650.0</obo:IAO_0000404>
+        <obo:IAO_0000406 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">468.0</obo:IAO_0000406>
         <schema:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</schema:height>
         <schema:width rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">620</schema:width>
     </owl:NamedIndividual>
@@ -4407,8 +4642,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BBox003">
         <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#BoundingBox"/>
-        <xCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">650.0</xCoordinate>
-        <yCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">540.0</yCoordinate>
+        <obo:IAO_0000404 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">650.0</obo:IAO_0000404>
+        <obo:IAO_0000406 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">540.0</obo:IAO_0000406>
         <schema:height rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52</schema:height>
         <schema:width rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">620</schema:width>
     </owl:NamedIndividual>
@@ -4448,9 +4683,8 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue001">
         <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityIssue"/>
         <addressedBy rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Rec001"/>
-        <affectsComponent rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField"/>
         <issueIn rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField"/>
-        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_3_3_2"/>
+        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG332"/>
         <detectedTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-04T10:30:00</detectedTimestamp>
         <issueDescription>Password field lacks visible label</issueDescription>
         <issueImpact>Screen reader users cannot identify field purpose</issueImpact>
@@ -4467,9 +4701,8 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue002">
         <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityIssue"/>
         <addressedBy rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Rec002"/>
-        <affectsComponent rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginButton"/>
         <issueIn rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginButton"/>
-        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_1_4_3"/>
+        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG143"/>
         <detectedTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-04T10:30:00</detectedTimestamp>
         <issueDescription>Button has insufficient color contrast ratio (2.8:1)</issueDescription>
         <issueImpact>Users with visual impairments cannot distinguish button</issueImpact>
@@ -4532,7 +4765,7 @@
         <basedOnIssue rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue001"/>
         <recommends rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField"/>
         <referencesComponentDetection rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#CompDetect001"/>
-        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_3_3_2"/>
+        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG332"/>
         <confidenceScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.95</confidenceScore>
         <generationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-04T10:31:00</generationTimestamp>
         <isValidated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isValidated>
@@ -4553,7 +4786,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRecommendation"/>
         <basedOnIssue rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#Issue002"/>
         <recommends rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginButton"/>
-        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_1_4_3"/>
+        <referencesWCAGStandard rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG143"/>
         <confidenceScore rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.98</confidenceScore>
         <generationTimestamp rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-04T10:31:00</generationTimestamp>
         <isValidated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isValidated>
@@ -4582,29 +4815,29 @@
     
 
 
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_1_4_3 -->
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG143 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_1_4_3">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG143">
         <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
         <violatedBy rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#LoginButton"/>
-        <accessibilityRequirementDescription>Text has contrast ratio of at least 4.5:1</accessibilityRequirementDescription>
         <minimumContrastRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.5</minimumContrastRequired>
         <wcagGuidelineNumber>1.4.3</wcagGuidelineNumber>
+        <reproduceme:description>Text has contrast ratio of at least 4.5:1</reproduceme:description>
         <schema:name>Contrast Minimum</schema:name>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_3_3_2 -->
+    <!-- http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG332 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG_3_3_2">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#WCAG332">
         <rdf:type rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#AccessibilityRequirement"/>
         <violatedBy rdf:resource="http://www.semanticweb.org/pmyls/ontologies/2025/10/uiuxdesign#PasswordField"/>
-        <accessibilityRequirementDescription>Labels or instructions are provided when content requires user input</accessibilityRequirementDescription>
         <wcagGuidelineNumber>3.3.2</wcagGuidelineNumber>
+        <reproduceme:description>Labels or instructions are provided when content requires user input</reproduceme:description>
         <schema:name>Labels or Instructions</schema:name>
     </owl:NamedIndividual>
-</rdf:RDF>
+    </rdf:RDF>
 
 
 
